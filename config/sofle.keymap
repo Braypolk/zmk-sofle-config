@@ -18,7 +18,7 @@
 
 / {
 
-   // Activate ADJUST layer by pressing raise and lower
+    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
         compatible = "zmk,conditional-layers";
         adjust_layer {
@@ -50,7 +50,7 @@
                  &mo LOWER &kp LALT &kp LALT  &kp SPACE  &kp LGUI     &kp RET &kp BSPC  &kp RALT &kp RALT  &mo RAISE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
         };
 
         lower_layer {
@@ -68,7 +68,7 @@
                         &none        &none        &none        &none   &none    &none   &none     &none     &none    &none 
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
         };
 
         raise_layer {
@@ -87,7 +87,7 @@
                     &trans    &trans      &trans    &trans    &trans   &trans &trans    &trans   &trans          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
         };
 
         adjust_layer {
@@ -115,7 +115,7 @@
                  &trans    &trans   &trans    &trans &trans       &trans  &trans    &trans   &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
         };
 
     };
