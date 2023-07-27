@@ -26,7 +26,12 @@
             then-layer = <ADJUST>;
         };
     };
-
+   sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <1>;
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
