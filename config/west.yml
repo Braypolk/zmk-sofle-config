@@ -15,12 +15,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: infused-kim
-      url-base: https://github.com/infused-kim
+    - name: SethMilliken
+      url-base: https://github.com/SethMilliken
   projects:
     - name: zmk
-      remote: infused-kim
-      revision: sofle
+      remote: SethMilliken
+      revision: sofle-led-strip-support
       import: app/west.yml
   self:
     path: config
