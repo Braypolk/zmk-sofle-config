@@ -1,0 +1,102 @@
+{
+
+;;  :devices {
+;;            :sculpt-keyboard [{:product_id 1957 :vendor_id 1118}]
+;;            }
+
+ :simlayers {
+             :f-mode {:key :f}    ; delimeters    ( ) [ ] { } and other symbols ~ $ &
+             :d-mode {:key :d}    ; Deletion left and right (letter, word, line)
+             :s-mode {:key :s}    ; Selection left and right (letter, word, line)
+             :a-mode {:key :a}    ; navigation hjkl + tab + enter + page down/up
+             ;
+             :x-mode {:key :x}    ; Some multi-character shortcuts like <= (not implemented)
+             }
+
+ :main [
+        {:des "CAPSLOCK is CTRL if pressed in combination, otherwise ESC"
+         :rules  [
+            [:##caps_lock        :left_control     nil         {:alone :escape}]
+          ]}
+
+        {:des "f-mode for delimeters and ! ? $"
+         :rules [:f-mode
+                 ;; u i j k m comma -> !Sopen_bracket !Sclose_bracket !S9 !S0 open_bracket close_bracket
+                 [:##u :!Sopen_bracket]
+                 [:##i :!Sclose_bracket]
+                 [:##j :!S9]
+                 [:##k :!S0]
+                 [:##m :open_bracket]
+                 [:##comma :close_bracket]
+                 ;; o l period -> !S1 !Sslash !S4
+                 [:##o :!S1]
+                 [:##l :!Sslash]
+                 [:##period :!S4]
+                ]
+         }
+
+        {:des "d-mode for deleting characters with ui, words with jk and lines with hl"
+         :rules [:d-mode
+                  [:##j         :delete_or_backspace]   ; e -> j    Left
+                  [:##l         :delete_forward]       ; e -> l    Right
+                  [:##u         :!Cdelete_or_backspace] ; e -> u    Opt+Left
+                  [:##o         :!Cdelete_forward]      ; e -> o    Opt+Right
+                  [:##h         :!Odelete_or_backspace] ; e -> h    Cmd+Left
+                  [:##semicolon :!Odelete_forward]      ; e -> ;    Cmd+Right
+                  [:##p         :delete_or_backspace]   ; e -> p    Delete word backwards
+                ]
+         }
+
+        {:des "a-mode allows for easy back and forth one character, word or line"
+         :rules [:a-mode
+                  [:##j         :left_arrow]          ; e -> j    Left
+                  [:##l         :right_arrow]         ; e -> l    Right
+                  [:##i         :up_arrow]            ; e -> i    Up
+                  [:##k         :down_arrow]          ; e -> k    Down
+                  [:##u         :!Cleft_arrow]        ; e -> u    Opt+Left
+                  [:##o         :!Cright_arrow]       ; e -> o    Opt+Right
+                  [:##h         :!Oleft_arrow]        ; e -> h    Cmd+Left
+                  [:##semicolon :!Oright_arrow]       ; e -> ;    Cmd+Right
+                  [:comma       :page_up]             ; e -> ,    page up
+                  [:period      :page_down]           ; e -> .    page down
+                  [:p           :delete_or_backspace] ; e -> p    Delete word backwards
+                ]
+         }
+
+        {:des "s-mode = a-mode + SHIFT (i.e. selection, not just movsment)"
+         :rules [:s-mode
+                  [:##j         :!Sleft_arrow]        ; e -> u    Shift+Left
+                  [:##l         :!Sright_arrow]       ; e -> i    Shift+Right
+                  [:##u         :!SCleft_arrow]       ; e -> j    Shift+Opt+Left
+                  [:##o         :!SCright_arrow]      ; e -> k    Shift+Opt+Right
+                  [:##h         :!SOleft_arrow]       ; e -> h    Shift+Cmd+Left
+                  [:##semicolon :!SOright_arrow]      ; e -> l    Shift+Cmd+Right
+                  [:comma       :!Spage_up]           ; e -> ,    Shift+page up
+                  [:period      :!Spage_down]         ; e -> .    Shift+page down
+                  [:p           :delete_or_backspace] ; e -> p    Delete word backwards
+                ]
+         }
+
+        #_{:des "x-mode for some programming pairs like <= (not yet implemented)"
+         :rules [:x-mode
+                ]
+        }
+
+        {:des "Forward slash is an easier right-shift (if combined)"
+         :rules  [
+            [:slash        :left_shift     nil         {:alone :slash}]
+          ]}
+
+        ;; Using keys for CTRL etc (home-row-mods) isn't practical with plain Karabiner.
+        ;; Some changes to timeout settings would be required, and the documentation is 
+        ;; not clear enough.
+        #_{:des "Convenient CTRL (T,Y) and COMMAND (G,H)"
+         :rules  [
+            [:##t        :left_control     nil         {:alone :t}]
+            [:##y        :left_control     nil         {:alone :y}]
+            [:##g        :left_command     nil         {:alone :g}]
+            [:##h        :left_command     nil         {:alone :h}]
+          ]}
+
+ ]
+}
