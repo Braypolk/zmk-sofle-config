@@ -135,7 +135,7 @@
             bindings = <
 &trans     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4             &none          &none     &kp PG_UP &none     &none   &kp EQUAL 
 &trans     &kp INS      &kp PSCRN    &kp K_CMENU  &none        &none                    &none          &none     &kp UP    &none     &kp N0  &kp RBKT 
-&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &none        &kp CLCK                 &kp LALT(LEFT) &kp LEFT  &kp DOWN  &kp LALT(RIGHT) &none   &kp BSLH
+&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &none        &kp CLCK                 &kp RA(LEFT) &kp LEFT  &kp DOWN  &kp RA(RIGHT) &none   &kp BSLH
 &trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &none   &none    &none   &none          &none     &none     &none     &none   &trans 
                         &trans       &to BASE     &trans       &trans  &trans   &trans  &kp DEL        &trans    &to RAISE &trans 
             >;
