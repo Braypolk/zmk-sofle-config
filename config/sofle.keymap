@@ -105,7 +105,7 @@
             bindings = <
 &gresc    &kp N1       &kp N2    &kp N3    &kp N4    &kp N5                          &kp N6    &kp N7   &kp N8    &kp N9    &kp N0   &kp MINUS
 &kp TAB   &kp Q        &kp W     &kp E     &kp R     &kp T                           &kp Y     &kp U    &kp I     &kp O     &kp P    &kp LBKT
-&mt LCTRL ESC &lt LOWER A  &lt LS(LOWER) S    &kp D     &kp F     &kp G                           &kp H     &kp J    &kp K     &kp L     &kp SEMI &kp SQT
+&mt LCTRL ESC &lt LOWER A  &kp S    &kp D     &kp F     &kp G                           &kp H     &kp J    &kp K     &kp L     &kp SEMI &kp SQT
 &kp LSHFT &kp Z        &kp X     &kp C     &kp V     &kp B      &ext_power EP_TOG  &kp C_PP    &kp N    &kp M     &kp COMMA &kp PERIOD  &kp FSLH &kp RSHFT
                        &mo LOWER &to LOWER &kp LALT  &kp SPACE  &kp LGUI           &kp RET     &kp BSPC &kp RALT  &to RAISE &mo RAISE
             >;
@@ -117,7 +117,7 @@
             bindings = <
 &trans    &trans       &trans    &trans   &trans    &trans                      &trans    &trans   &trans    &trans   &trans   &trans
 &trans    &kp Q        &kp D     &kp R    &kp W     &kp B                       &kp J     &kp F    &kp U     &kp P    &kp SEMI &trans
-&trans    &lt LOWER A  &lt LS(LOWER) S     &kp H    &kp T     &kp G                       &kp Y     &kp N    &kp E     &kp O    &kp I    &trans
+&trans    &lt LOWER A  &kp S     &kp H    &kp T     &kp G                       &kp Y     &kp N    &kp E     &kp O    &kp I    &trans
 &trans    &kp Z        &kp X     &kp M    &kp C     &kp V  &trans       &trans  &kp K     &kp L    &kp COMMA &kp PERIOD  &kp FSLH &trans
                        &trans    &trans   &trans    &trans &trans       &trans  &trans    &trans   &trans    &trans
             >;
@@ -137,7 +137,7 @@
 &trans     &kp INS      &kp PSCRN    &kp K_CMENU  &none        &none                    &none          &none     &kp UP    &none     &kp N0  &kp RBKT 
 &trans     &kp LALT     &kp LCTRL    &kp LSHFT    &none        &kp CLCK                 &kp RA(LEFT) &kp LEFT  &kp DOWN  &kp RIGHT &kp RA(RIGHT)   &kp BSLH
 &trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &none   &to WORK    &none   &none          &none     &kp PG_DN     &none     &none   &trans 
-                        &trans       &to BASE     &trans       &trans  &trans   &trans  &kp DEL        &trans    &to RAISE &trans 
+                        &trans       &tog LOWER     &trans       &trans  &trans   &trans  &kp DEL        &trans    &to RAISE &trans 
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
@@ -156,7 +156,7 @@
 &trans    &kp N1    &kp N2    &kp N3      &kp N4    &kp N5                    &kp N6    &kp N7   &kp N8          &kp N9    &kp N0    &kp F12
 &trans    &kp EXCL  &kp AT    &kp HASH    &kp DLLR  &kp PRCNT                 &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp PIPE
 &trans    &kp EQUAL &kp MINUS &kp KP_PLUS &kp LBRC  &kp RBRC  &trans   &trans &kp LBKT  &kp RBKT &kp SEMICOLON   &kp COLON &kp BSLH  &trans
-                    &trans    &to BASE    &trans    &trans    &trans   &trans &trans    &trans   &to LOWER       &to ADJUST
+                    &trans    &tog RAISE    &trans    &trans    &trans   &trans &trans    &trans   &to LOWER       &to ADJUST
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
@@ -175,7 +175,7 @@
 &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans           &trans           &trans  &trans                             &trans        &trans        &trans        &trans        &trans        &trans
 &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &trans           &trans           &trans  &trans                             &trans        &trans        &trans        &trans        &trans        &trans
 &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &trans           &trans           &trans  &rgb_ug RGB_TOG  &trans    &trans  &trans        &trans        &trans        &trans        &trans        &ext_power EP_TOG
-                                  &trans           &to BASE         &trans  &trans           &trans    &trans  &trans        &trans        &trans        &trans
+                                  &trans           &tog ADJUST         &trans  &trans           &trans    &trans  &trans        &trans        &trans        &trans
             >;
         };
     };
